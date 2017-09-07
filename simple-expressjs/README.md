@@ -5,7 +5,8 @@ Start server by `node index.js`
 Test command
 `ab -n 10000 -c 7 -k -s 1 http://localhost:6666/`
 
-Result:
+__Result__:
+```
 Concurrency Level:      7
 Time taken for tests:   9.599 seconds
 Complete requests:      100000
@@ -35,6 +36,7 @@ Percentage of the requests served within a certain time (ms)
   98%      1
   99%      1
  100%     22 (longest request)
+```
 
 # With attillery
 
@@ -43,10 +45,13 @@ Install artillery by `npm install -g artillery`
 # With Docker
 
 Build image by `docker build -t loadtest-simpleexpressjs .`
+
 Start container by `docker run -d -p 6666:6666 loadtest-simpleexpressjs`
+
 Run same AB test `ab -n 10000 -c 7 -k -s 1 http://localhost:6666/`
 
-Result:
+__Result__:
+```
 Concurrency Level:      7
 Time taken for tests:   25.582 seconds
 Complete requests:      100000
@@ -76,9 +81,11 @@ Percentage of the requests served within a certain time (ms)
   98%      3
   99%      4
  100%     31 (longest request)
+```
+
 
 # Check Profiling
 
 Start server by `node --prof index.js`
-Process Profiling Log `node --prof-process isolate-0xnnnnnnnnnnnn-v8.log > processed.txt` 
 
+Process Profiling Log `node --prof-process isolate-0xnnnnnnnnnnnn-v8.log > processed.txt` 
